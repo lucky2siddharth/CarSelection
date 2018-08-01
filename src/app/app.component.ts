@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MakeService } from './services/make.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import * as toastr from 'toastr';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,7 @@ export class AppComponent implements OnInit {
       });
     }, error => {
       console.log(error);
+      toastr["error"]("Error occured.");
     })
   }
   getSelectedItem(){
@@ -66,6 +68,7 @@ export class AppComponent implements OnInit {
         this.createImage(data);
       }, error => {
         console.log(error);
+        toastr["error"]("Error occured.");
       });
     }
   }
