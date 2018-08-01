@@ -13,14 +13,14 @@ export class MakeService {
   getMakes(){
     var thisObj = this;
       return this.http
-        .get(thisObj.endpoint + 'makes')
+        .get(thisObj.endpoint + 'vehicles')
         .map(response => response);
   }
   
   getImage(make, model){
     var thisObj = this;
     return this.http
-    .get(thisObj.endpoint + 'makes/'+ make +'/'+ model, { responseType: 'blob' })
+    .get(thisObj.endpoint + 'vehicles/'+ make +'/'+ model, { responseType: 'blob' })
     .map(response => response);
   }
 
