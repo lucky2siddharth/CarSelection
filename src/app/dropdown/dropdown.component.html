@@ -1,0 +1,9 @@
+<div class="btn-group" dropdown>
+  <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+    {{shownText}} <span class="caret"></span>
+  </button>
+  <ul *dropdownMenu class="dropdown-menu" role="menu">
+    <li><a class="dropdown-item" href="#" (click)="selectItem(null)">None</a></li>
+    <li role="menuitem" *ngFor="let item of data.data" (click)="selectItem(item)"><a class="dropdown-item" href="#">{{item}}</a></li>
+  </ul>
+</div>

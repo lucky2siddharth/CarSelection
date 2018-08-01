@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="row">
+            Selected Item: {{ getSelectedItem() }}
+          </div>
+          <div class="row">
+            <app-dropdown [data]="makes" (selectEvent)="makeChange($event)"></app-dropdown>
+          </div>
+          <div class="row">
+            <app-dropdown [data]="models" (selectEvent)="modelChange($event)" *ngIf="selectedMake"></app-dropdown>
+          </div>
+    </div>
+    <div class="col-md-6 col-sm-6" *ngIf="selectedMake && selectedModel">
+      <img [src]="image"
+     alt="No Image Found">
+    </div>
+  </div>
+</div>
